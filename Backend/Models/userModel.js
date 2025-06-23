@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     token: { type: String },
     image: { type: String},
-    liked: { type: String }
+    wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+    cart: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }]
 });
 
 // Corrected export statement

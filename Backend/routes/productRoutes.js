@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { authenticateUser } = require('../middlewares/usermiddleware');
-const { addProduct, deleteProduct, editProduct, getProduct, getAll, likedProduct, removefromLike, addtoCart, removefromCart, allLiked } = require('../Controllers/auth');
+const { addProduct, deleteProduct, editProduct, getProduct, getAll, likedProduct, removefromLike, addtoCart, removefromCart, allLiked, allCart } = require('../Controllers/auth');
 
 router.post('/add', authenticateUser, addProduct);
 router.post('/delete/:id', authenticateUser, deleteProduct);
@@ -14,7 +14,8 @@ router.get('/like', authenticateUser, allLiked);
 router.post('/like/:id', authenticateUser, likedProduct);
 router.delete('/like/:id', authenticateUser, removefromLike);
 
-// Cart
+// cart
+router.get('/cart', authenticateUser, allCart);
 router.post('/cart/:id', authenticateUser, addtoCart);
 router.delete('/cart/:id', authenticateUser, removefromCart);
 
