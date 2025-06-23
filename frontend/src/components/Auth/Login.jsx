@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import { validateEmail } from '../utils/helper.js';
+import { validateEmail } from '../../utils/helper';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Ensure correct path
-
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -52,14 +52,7 @@ const Login = () => {
   return (
     <div className="font-sans">
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 bg-white shadow-md">
-        <img src={logo} alt="Logo" className="h-16 w-auto" />
-        <div className="flex space-x-6">
-          <Link to="/" className="text-gray-600">Home</Link>
-          <Link to="/shop" className="text-gray-600">Shop</Link>
-          <Link to="/about" className="text-gray-600">About</Link>
-        </div>
-      </nav>
+      <Navbar/>
 
       {/* Login Section */}
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -115,12 +108,7 @@ const Login = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white p-8 text-center">
-        <p className="text-xl">Stay updated with new collections and promotions</p>
-        <input type="email" placeholder="Email address" className="mt-4 p-2 rounded bg-gray-800 text-white" />
-        <button className="ml-2 px-4 py-2 bg-pink-600 rounded">Subscribe</button>
-        <p className="mt-4 text-gray-400">Copyright © 2025 ARTISANS CONNECT. All rights reserved.</p>
-      </footer>
+      <Footer/>
     </div>
   );
 };

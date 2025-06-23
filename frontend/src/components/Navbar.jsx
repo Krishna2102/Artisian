@@ -1,17 +1,21 @@
 import React from 'react'
-
-const NavFoot = () => {
+import { Search, Heart, ShoppingCart, User } from 'lucide-react';
+import logo from '../assets/logo.png'; // Ensure correct path
+const Navbar = () => {
   return (
     <div>
         <nav className="flex justify-between items-center p-6 bg-white shadow-md">
         {/* Logo */}
+        <a href="/">
         <img src={logo} alt="Logo" className="h-20 w-auto" />
-
+        </a>
         {/* Navigation Links */}
         <div className="flex space-x-6">
-          <a href="#" className="text-gray-600">By Region</a>
-          <a href="#" className="text-gray-600">By Category</a>
-          <a href="#" className="text-gray-600">Our Mission</a>
+          <a href="/products" className="text-gray-600">Products</a>
+           <a href="/blog" className="text-gray-600">Blogs</a>
+          <a href="#" className="text-gray-600">Mission</a>
+          <a href="/contact" className="text-gray-600">Contact</a>
+
         </div>
 
         {/* Search Bar */}
@@ -22,8 +26,8 @@ const NavFoot = () => {
 
         {/* Icons: Wishlist, Cart, Profile */}
         <div className="flex space-x-4">
-          <a href="/profile"><Heart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
-          <a href="/profile"><ShoppingCart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
+          <a href="/wishlist"><Heart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
+          <a href="/cart"><ShoppingCart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
           <a href="/profile"><User className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
         </div>
       </nav>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"; // Ensure correct path
 import { Search, Heart, ShoppingCart, User } from 'lucide-react';
-
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 const Signin = () => {
   
   // register  new account
@@ -55,30 +55,7 @@ const Signin = () => {
     <div className="font-sans">
       {/* Navbar */}
      {/* Navbar */}
-     <nav className="flex justify-between items-center p-6 bg-white shadow-md">
-        {/* Logo */}
-        <img src={logo} alt="Logo" className="h-20 w-auto" />
-
-        {/* Navigation Links */}
-        <div className="flex space-x-6">
-          <a href="#" className="text-gray-600">By Region</a>
-          <a href="#" className="text-gray-600">By Category</a>
-          <a href="#" className="text-gray-600">Our Mission</a>
-        </div>
-
-        {/* Search Bar */}
-        <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-          <input type="text" placeholder="Search products..." className="bg-transparent outline-none" />
-          <Search className="text-gray-600 h-5 w-5 ml-2 cursor-pointer" />
-        </div>
-
-        {/* Icons: Wishlist, Cart, Profile */}
-        <div className="flex space-x-4">
-          <Heart className="text-gray-600 h-6 w-6 cursor-pointer" />
-          <ShoppingCart className="text-gray-600 h-6 w-6 cursor-pointer" />
-          <User className="text-gray-600 h-6 w-6 cursor-pointer" />
-        </div>
-      </nav>
+     <Navbar/>
       {/* Registration Section */}
       <div className="flex justify-center items-center min-h-screen bg-gray-100 ">
         <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-3xl mt-5 mb-5">
@@ -165,12 +142,7 @@ const Signin = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white p-8 text-center">
-        <p className="text-xl">Stay updated with new collections and promotions</p>
-        <input type="email" placeholder="Email address" className="mt-4 p-2 rounded bg-gray-800 text-white" />
-        <button className="ml-2 px-4 py-2 bg-pink-600 rounded">Subscribe</button>
-        <p className="mt-4 text-gray-400">Copyright © 2025 ARTISANS CONNECT. All rights reserved.</p>
-      </footer>
+      <Footer/>
     </div>
   );
 };

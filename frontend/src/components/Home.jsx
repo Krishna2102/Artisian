@@ -1,7 +1,6 @@
 import React from 'react';
-import { Search, Heart, ShoppingCart, User } from 'lucide-react';
-import logo from '../assets/logo.png'; // Ensure correct path
-
+import Navbar from './Navbar';
+import Footer from './Footer';
 const Home = () => {
     const categories = [
         { name: "PILLOWS AND THROWS", image: "https://artisansconnect.org/product_images/uploaded_images/bedding.jpg" },
@@ -13,30 +12,7 @@ const Home = () => {
   return (
     <div className="font-sans">
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 bg-white shadow-md">
-        {/* Logo */}
-        <img src={logo} alt="Logo" className="h-20 w-auto" />
-
-        {/* Navigation Links */}
-        <div className="flex space-x-6">
-          <a href="#" className="text-gray-600">By Region</a>
-          <a href="#" className="text-gray-600">By Category</a>
-          <a href="#" className="text-gray-600">Our Mission</a>
-        </div>
-
-        {/* Search Bar */}
-        <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-          <input type="text" placeholder="Search products..." className="bg-transparent outline-none" />
-          <Search className="text-gray-600 h-5 w-5 ml-2 cursor-pointer" />
-        </div>
-
-        {/* Icons: Wishlist, Cart, Profile */}
-        <div className="flex space-x-4">
-          <a href="/profile"><Heart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
-          <a href="/profile"><ShoppingCart className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
-          <a href="/profile"><User className="text-gray-600 h-6 w-6 cursor-pointer" /></a>
-        </div>
-      </nav>
+      <Navbar/>
 
       {/* Hero Section */}
       <header className="relative flex flex-col items-center justify-center md:items-start p-12 bg-gray-100 h-[500px]">
@@ -53,7 +29,9 @@ const Home = () => {
   {/* Content */}
   <div className="relative z-10 text-center md:text-left text-white max-w-2xl">
     <h1 className="text-4xl font-bold">Welcome to our new artisan marketplace!</h1>
-    <button className="mt-4 px-6 py-3 bg-green-600 text-white rounded-full">Explore the Silk Road</button>
+    <div className='py-7'>
+      <a href="/products" className='mt-4 px-6 py-3 bg-green-600 text-white rounded-full'>Explore the Silk Road</a>
+    </div>
   </div>
 </header>
 
@@ -106,50 +84,86 @@ const Home = () => {
   <div className="relative z-10 text-center md:text-left ml-[700px] text-white max-w-2xl">
     <h1 className="text-4xl font-bold">Preserving culture and heritage</h1>
     <h2 className='text-lg'>We welcome you to join us on this transformative cultural journey by discovering master artisans who keep traditional arts alive….</h2>
-    <button className="mt-4 px-6 py-3 bg-green-600 text-white rounded-full">Learn More</button>
+    <div className='py-6'>
+      <a href="/aboutus" className='mt-4 px-6 py-3 bg-green-600 text-white rounded-full'>
+        Learn More
+      </a>
+    </div>
   </div>
 </header>
 
+{/* Our Blogs Section */}
+<section className="bg-gray-50 py-12 px-4 md:px-20">
+  <h2 className="text-3xl font-semibold text-center">Our Blogs</h2>
+  <div className="w-16 h-1 bg-blue-500 mx-auto mt-2 mb-10"></div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {/* Blog 1 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img
+        src="https://tribesindia.com/public/uploads/all/1fgRJGPwox43f33TckwarmWq8DYOP754o00QISAm.webp"
+        alt="Bhil Art"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-1">Bhil Art – Pithora Art</h3>
+        <p className="text-gray-500 text-sm mb-2">September 23, 2021 /// No Comments</p>
+        <p className="text-gray-700 text-sm mb-3">Ritualistic paintings of Bhil tribes in Madhya Pradesh and Gujarat symbolizing culture and identity...</p>
+        <a href="/blogs/pithora-art" className="text-blue-600 font-semibold hover:underline">Read More »</a>
+      </div>
+    </div>
+
+    {/* Blog 2 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img
+        src="https://tribesindia.com/public/uploads/all/1fgRJGPwox43f33TckwarmWq8DYOP754o00QISAm.webp"
+        alt="Warli Art"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-1">Warli Tribal Art</h3>
+        <p className="text-gray-500 text-sm mb-2">October 14, 2021 /// 2 Comments</p>
+        <p className="text-gray-700 text-sm mb-3">Warli art from Maharashtra uses simple geometric forms to depict everyday life and nature worship...</p>
+        <a href="/blogs/warli-art" className="text-blue-600 font-semibold hover:underline">Read More »</a>
+      </div>
+    </div>
+
+    {/* Blog 3 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img
+        src="https://tribesindia.com/public/uploads/all/1fgRJGPwox43f33TckwarmWq8DYOP754o00QISAm.webp"
+        alt="Madhubani Painting"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-1">Madhubani Paintings</h3>
+        <p className="text-gray-500 text-sm mb-2">November 5, 2021 /// No Comments</p>
+        <p className="text-gray-700 text-sm mb-3">A folk art tradition from Bihar, Madhubani paintings are known for intricate patterns and vibrant colors...</p>
+        <a href="/blogs/madhubani" className="text-blue-600 font-semibold hover:underline">Read More »</a>
+      </div>
+    </div>
+
+    {/* Blog 4 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img
+        src="https://tribesindia.com/public/uploads/all/1fgRJGPwox43f33TckwarmWq8DYOP754o00QISAm.webp"
+        alt="Kalamkari"
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-1">Kalamkari – Storytelling on Cloth</h3>
+        <p className="text-gray-500 text-sm mb-2">December 1, 2021 /// 1 Comment</p>
+        <p className="text-gray-700 text-sm mb-3">Kalamkari is a hand-painted or block-printed cotton textile, historically rooted in Andhra Pradesh...</p>
+        <a href="/blogs/kalamkari" className="text-blue-600 font-semibold hover:underline">Read More »</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Footer */}
-<footer className="bg-gray-900 text-white p-8 text-center flex justify-between items-start">
-  
-  {/* Left Section - About Us & Help */}
-  <div className="flex space-x-16 text-left ">
-    {/* About Us Column */}
-    <div>
-      <h3 className="text-2xl font-semibold">About Us</h3>
-      <ul className="mt-4 space-y-2 text-gray-400">
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">About EcoArtisan Hub</a></li>
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">Privacy Policy</a></li>
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">Sitemap</a></li>
-      </ul>
-    </div>
-
-    {/* Help Column */}
-    <div>
-      <h3 className="text-2xl font-semibold">Help</h3>
-      <ul className="mt-4 space-y-2 text-gray-400">
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">Order Tracking</a></li>
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">Customer Service</a></li>
-        <li><a href="#" className="hover:text-green-500 whitespace-nowrap">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-
-  {/* Right Section - Newsletter */}
-  <div className="text-left flex">
-    <p className="text-2xl p-4 ml-12 ">Stay updated with new marketplace collections and promotions.</p>
-   <div className='flex flex-col'>
-    <div className="mt-4 flex items-center space-x-2 ">
-      <input type="email" placeholder="Email address" className="p-2 rounded text-black" />
-      <button className="px-4 py-2 bg-green-600 rounded hover:bg-green-700">Subscribe</button>
-    </div>
-    <p className="mt-4 text-gray-400">Copyright © 2025 ARTISANS CONNECT. All rights reserved.</p>
-    </div>
-  </div>
-
-</footer>
+<Footer/>
 
     </div>
   );

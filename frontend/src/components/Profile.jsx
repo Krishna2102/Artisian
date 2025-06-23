@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import Orders from "./Pages/Cart";
-import Messages from "./Pages/Messages";
-import Addresses from "./Pages/Addresses";
-import Wishlist from "./Pages/Wishlist";
-import AccountSettings from "./Pages/Account"; // ✅ Fixed path
 import { Search, Heart, ShoppingCart, User } from 'lucide-react';
-import logo from '../assets/logo.png'; // Ensure correct path
-
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("orders");
 
@@ -14,30 +9,7 @@ const Profile = () => {
 
     <div >
          {/* Navbar */}
-              <nav className="flex justify-between items-center p-6 bg-white shadow-md">
-                {/* Logo */}
-                <img src={logo} alt="Logo" className="h-20 w-auto" />
-        
-                {/* Navigation Links */}
-                <div className="flex space-x-6">
-                  <a href="#" className="text-gray-600">By Region</a>
-                  <a href="#" className="text-gray-600">By Category</a>
-                  <a href="#" className="text-gray-600">Our Mission</a>
-                </div>
-        
-                {/* Search Bar */}
-                <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-                  <input type="text" placeholder="Search products..." className="bg-transparent outline-none" />
-                  <Search className="text-gray-600 h-5 w-5 ml-2 cursor-pointer" />
-                </div>
-        
-                {/* Icons: Wishlist, Cart, Profile */}
-                <div className="flex space-x-4">
-                  <Heart className="text-gray-600 h-6 w-6 cursor-pointer" />
-                  <ShoppingCart className="text-gray-600 h-6 w-6 cursor-pointer" />
-                  <User className="text-gray-600 h-6 w-6 cursor-pointer" />
-                </div>
-              </nav>
+             <Navbar/>
     <div className="max-w-4xl mx-auto p-6">
         
       <div className="text-gray-500 text-sm mb-4">
